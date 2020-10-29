@@ -1,6 +1,6 @@
 # The Gathering of Leto
 
-A wonderful demonstration of an app that just might work perfect for someone out there, somewhere.  
+A wonderful demonstration of an app that just might work perfectly for someone out there, somewhere.  
 Part of the team challenges in SI Gathering 2020.
 
 ## Table of contents
