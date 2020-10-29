@@ -1,5 +1,7 @@
-# SI Gathering Challenge: Template
+# The Gathering of Leto
 
+A wonderful demonstration of an app that just might work perfect for someone out there, somewhere.  
+Part of the team challenges in SI Gathering 2020.
 
 ## Table of contents
 
@@ -7,7 +9,6 @@
 - [Components](#components)
 - [Security](#security)
 - [Development](#development)
-- [Additional documentation](#additional-docs)
 
 ## Technologies
 
@@ -36,9 +37,7 @@
 ## Components
 
 ### server 
-
-- [**presentation**](./docs)  
-  A web app produced by Dash.
+A Dash app, which is a form of web server.
 
 
 ## Security
