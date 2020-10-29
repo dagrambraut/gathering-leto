@@ -70,7 +70,8 @@ A Dash app, which is a form of web server.
 
 ### How we work
 
-Trunk based development and a [Kanban board](https://github.com/equinor/gathering-leto/projects/2)
+Trunk based development and a [Kanban board](https://github.com/equinor/gathering-leto/projects/2), peer programming, mob rebasing and code review. 
+
 1. Pick an issue/feature
 1. Create a feature branch and start hacking
 1. When done hacking, run pull request and code review
