@@ -3,9 +3,9 @@ import dash_table
 import dash_html_components as html
 import dash_core_components as dcc
 from data.git_data import get_issues
-from data.mock_data import tags
 
 
+tags = ["todo", "in progress", "discussion"]
 external_style = ["https://eds-static.equinor.com/font/equinor-font.css"]
 
 
