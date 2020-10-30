@@ -8,7 +8,6 @@ import plotly.graph_objects as go
 import pandas as pd
 
 
-tags = ["todo", "in progress", "discussion"]
 external_style = ["https://eds-static.equinor.com/font/equinor-font.css"]
 
 
@@ -49,18 +48,6 @@ def _create_table_view_div(data_dict):
                 columns=[{"name": key, "id": key} for key in data_dict[0].keys()],
                 data=data_dict,
             )
-        ]
-    )
-
-
-def _create_tags_listbox_div(data_listbox):
-    return html.Div(
-        [
-            dcc.Dropdown(
-                id="users-dropdown",
-                options=[{"label": item, "value": item} for item in data_listbox],
-            ),
-            html.Div(id="show-user"),
         ]
     )
 
@@ -154,7 +141,6 @@ app.layout = html.Div(
     [
         _create_logo(),
         _create_navbar(),
-        _create_tags_listbox_div(tags),
         _create_checkboxes_div(keys),
         _create_table_view_div(get_data_dict_keys(data_issues, ["title", "user"])),
         _create_bottombar(),
