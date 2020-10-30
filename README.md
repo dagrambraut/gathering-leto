@@ -92,6 +92,43 @@ Feel free to create a new issue under [`Issues`](https://github.com/equinor/gath
 Try to describe the best you can the issue that arose.
 Remember that we always need your help in order to reproduce bugs!
 
+## Contributing guidelines
+
+First of all, thank you for even considering contributing to this
+repository! We are honored :tada: Below, you can find some advide and hints
+regarding the expectations towards pull requests.
+
+##### Communicate intent early
+
+To align and discuss your ideas we encourage you to communicate your intent as
+early as possible. Both in the format of an issue describing what you would
+like to solve, but also by creating early pull requests where on can discuss an
+implementation.
+
+##### Git usage
+
+We strive to keep a consistent and clean git history and in general:
+- all tests should pass on all commits,
+- a commit should do one atomic change on the repository and
+- the commit message should be descriptive.
+
+For more on commit messages, read [this](https://chris.beams.io/posts/git-commit/).
+
+##### Code formatting
+
+We use [black](https://black.readthedocs.io/en/stable/), the uncompromising
+Python code formatter, to format our code. In particular it runs as part of our
+code style CI. It can be installed locally by `pip install black`. For an
+updated instruction on how to run black we refer you to the `black` section of
+our [code style workflow](.github/worflows/code_style.yml)
+
+###### Code validation
+
+We use [flake8](https://flake8.pycqa.org/en/latest/) as a code style tool in
+our CI pipeline. It can be installed locally by `pip install flake8`. For an
+updated instruction on how to run black we refer you to the `flake8` section of
+our [code style workflow](.github/worflows/code_style.yml)
+
 
 ## Build and run release image
 
