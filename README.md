@@ -4,8 +4,7 @@
 
 # The Gathering of Leto
 
-A wonderful demonstration of an app that just might work perfectly for someone out there, somewhere.  
-Part of the team challenges in SI Gathering 2020.
+Part of the team challenges during SI Gathering 2020. A wonderful demonstration of an app that explores Github issues and just might work perfectly for someone out there, somewhere.
 
 ## Table of contents
 
@@ -14,18 +13,18 @@ Part of the team challenges in SI Gathering 2020.
 - [Security](#security)
 - [Development](#development)
 - [Feedback](#feedback)
+- [Team Members](#team-members)
 
 ## Technologies
 
 - [dash](https://plotly.com/dash/)  
-  Dash empowers teams to build data science and ML apps that put the power of Python, R, and Julia in the hands of business users. Full-stack apps that would typically require a front end, back end, and DevOps team can now be built and deployed in hours by data scientists with Dash
+  Dash empowers teams to build data science and ML apps that put the power of Python, R, and Julia in the hands of business users. Full-stack apps that would typically require a front end, back end, and DevOps team can now be built and deployed in hours by data scientists with Dash.
 
 - [Docker](https://www.docker.com/)  
-  For hosting the web app anywhere and to run local development environments
-  To quickly get up to speed with docker then run through the [Learn Docker & Containers using Interactive Browser-Based Scenarios](https://www.katacoda.com/courses/docker) at katacoda  
+  For hosting the web app anywhere and to run local development environments. To quickly get up to speed with docker then run through the [Learn Docker & Containers using Interactive Browser-Based Scenarios](https://www.katacoda.com/courses/docker) at katacoda.  
 
 - [Omnia Radix](https://www.radix.equinor.com/)  
-  CICD and hosting of apps in docker containers
+  CICD and hosting of apps in docker containers.
 
 
 ### CICD
@@ -145,3 +144,12 @@ docker run -it --rm -p 8000:8000 --name gathering-leto-release gathering-leto-re
 # Inspect contents
 docker exec -it gathering-leto-release sh
 ```
+
+
+## Team Members
+* Alena Chaikouskaya
+* Anette Uttisrud
+* Dag Rambraut
+* Jonas Peter Sørensen
+* Julius Parulek
+* Markus Fanebust Dregi
