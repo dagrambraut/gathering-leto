@@ -33,7 +33,6 @@ def _create_logo():
 
 
 def _create_table_view_div(data_dict):
-    print(data_dict[0].keys())
     return html.Div(
         [
             dash_table.DataTable(
