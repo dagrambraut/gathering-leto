@@ -9,6 +9,7 @@ Part of the team challenges in SI Gathering 2020.
 - [Components](#components)
 - [Security](#security)
 - [Development](#development)
+- [Feedback](#feedback)
 
 ## Technologies
 
@@ -77,6 +78,15 @@ Trunk based development and a [Kanban board](https://github.com/equinor/gatherin
 1. When done hacking, run pull request and code review
 1. If review ok then merge into master, this will kick off CICD for development in Radix
 
+## Feedback
+Did you spot a bug?
+Do you want to suggest a new feature?
+Do you have a question?
+
+Feel free to create a new issue under [`Issues`](https://github.com/equinor/gathering-leto/issues)!
+
+Try to describe the best you can the issue that arose.
+Remember that we always need your help in order to reproduce bugs!
 
 
 ## Build and run release image
