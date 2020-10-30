@@ -73,12 +73,28 @@ def _create_navbar():
     )
 
 
+def _create_bottombar():
+    return html.Div(
+        children=[
+            html.Nav(
+                className="bottombar",
+                children=[
+                    html.P(
+                        "Team Leto - copyright 2020",
+                    )
+                ],
+            )
+        ]
+    )
+
+
 app.layout = html.Div(
     [
         _create_logo(),
         _create_navbar(),
         _create_tags_listbox_div(tags),
         _create_table_view_div(get_data_dict(data_issues)),
+        _create_bottombar(),
     ]
 )
 
