@@ -2,7 +2,9 @@ import dash
 import dash_table
 import dash_html_components as html
 import dash_core_components as dcc
+import data
 from data.git_data import get_issues
+import plotly.graph_objects as go
 
 
 tags = ["todo", "in progress", "discussion"]
@@ -88,6 +90,32 @@ def _create_bottombar():
     )
 
 
+def _create_activity_plot(issue_data):
+    fig = go.Figure()
+    fig.add_trace(
+        go.Scatter(
+            name="Closed",
+            x=issue_data["date"],
+            y=issue_data["closed"],
+            stackgroup="the-one",
+        )
+    )
+    fig.add_trace(
+        go.Scatter(
+            name="Open",
+            x=issue_data["date"],
+            y=issue_data["open"],
+            stackgroup="the-one",
+        )
+    )
+
+    return html.Div(
+        [
+            dcc.Graph(figure=fig),
+        ]
+    )
+
+
 app.layout = html.Div(
     [
         _create_logo(),
@@ -95,6 +123,9 @@ app.layout = html.Div(
         _create_tags_listbox_div(tags),
         _create_table_view_div(get_data_dict(data_issues)),
         _create_bottombar(),
+        _create_activity_plot(
+            data.git_data.fetch_issue_activity("equinor/gathering-leto")
+        ),
     ]
 )
 
