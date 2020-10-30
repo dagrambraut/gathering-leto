@@ -3,7 +3,6 @@ import dash_table
 import dash_html_components as html
 import dash_core_components as dcc
 import data
-from data.git_data import get_issues
 import plotly.graph_objects as go
 import pandas as pd
 
@@ -14,7 +13,7 @@ external_style = ["https://eds-static.equinor.com/font/equinor-font.css"]
 app = dash.Dash(__name__, external_stylesheets=external_style)
 
 
-data_issues = get_issues("equinor/gathering-leto")
+data_issues = data.get_issues("equinor/gathering-leto")
 
 
 def get_node_value(node, key):
@@ -144,7 +143,7 @@ app.layout = html.Div(
         _create_checkboxes_div(keys),
         _create_table_view_div(get_data_dict_keys(data_issues, ["title", "user"])),
         _create_activity_plot(
-            data.git_data.fetch_issue_activity("equinor/gathering-leto"),
+            data.fetch_issue_activity("equinor/gathering-leto"),
         ),
         _create_bottombar(),
     ]
