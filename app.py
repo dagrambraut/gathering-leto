@@ -5,6 +5,7 @@ import dash_core_components as dcc
 import data
 from data.git_data import get_issues
 import plotly.graph_objects as go
+import pandas as pd
 
 
 tags = ["todo", "in progress", "discussion"]
@@ -17,10 +18,16 @@ app = dash.Dash(__name__, external_stylesheets=external_style)
 data_issues = get_issues("equinor/gathering-leto")
 
 
-def get_data_dict(data_json_list):
+def get_node_value(node, key):
+    if key == "user":
+        return node.user.login
+    return getattr(node, key)
+
+
+def get_data_dict_keys(data_json_list, keys):
     results = []
     for node in data_json_list:
-        d = {"title": node.title, "id": node.id, "user": node.user.login}
+        d = {str(k): get_node_value(node, k) for k in keys}
         results.append(d)
     return results
 
@@ -116,12 +123,40 @@ def _create_activity_plot(issue_data):
     )
 
 
+keys = [
+    "assignee",
+    "body",
+    "closed_at",
+    "closed_by",
+    "comments",
+    "created_at",
+    "id",
+    "labels",
+    "milestone",
+    "pull_request",
+    "repository",
+    "title",
+    "user",
+]
+
+
+def _create_checkboxes_div(key_list):
+    return html.Div(
+        dcc.Checklist(
+            id="input-items",
+            options=[{"label": key, "value": key} for key in key_list],
+            value=["title", "user"],
+        )
+    )
+
+
 app.layout = html.Div(
     [
         _create_logo(),
         _create_navbar(),
         _create_tags_listbox_div(tags),
-        _create_table_view_div(get_data_dict(data_issues)),
+        _create_checkboxes_div(keys),
+        _create_table_view_div(get_data_dict_keys(data_issues, ["title", "user"])),
         _create_bottombar(),
         _create_activity_plot(
             data.git_data.fetch_issue_activity("equinor/gathering-leto")
@@ -131,11 +166,22 @@ app.layout = html.Div(
 
 
 @app.callback(
-    dash.dependencies.Output("show-user", "children"),
-    [dash.dependencies.Input("users-dropdown", "value")],
+    dash.dependencies.Output("table", "columns"),
+    [dash.dependencies.Input("input-items", "value")],
 )
 def update_output(value):
-    return 'You have selected "{}"'.format(value)
+    data_dict = get_data_dict_keys(data_issues, value)
+    columns = [{"name": key, "id": key} for key in data_dict[0].keys()]
+    return columns
+
+
+@app.callback(
+    dash.dependencies.Output("table", "data"),
+    [dash.dependencies.Input("input-items", "value")],
+)
+def update_output(value):
+    data_dict = get_data_dict_keys(data_issues, value)
+    return data_dict
 
 
 if __name__ == "__main__":
