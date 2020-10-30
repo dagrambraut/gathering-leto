@@ -143,10 +143,10 @@ app.layout = html.Div(
         _create_navbar(),
         _create_checkboxes_div(keys),
         _create_table_view_div(get_data_dict_keys(data_issues, ["title", "user"])),
-        _create_bottombar(),
         _create_activity_plot(
-            data.git_data.fetch_issue_activity("equinor/gathering-leto")
+            data.git_data.fetch_issue_activity("equinor/gathering-leto"),
         ),
+        _create_bottombar(),
     ]
 )
 
