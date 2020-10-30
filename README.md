@@ -1,3 +1,7 @@
+[![GitHub Actions](https://github.com/equinor/gathering-leto/workflows/python_code_style/badge.svg)](https://github.com/features/actions)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+
 # The Gathering of Leto
 
 A wonderful demonstration of an app that just might work perfectly for someone out there, somewhere.  
