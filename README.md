@@ -31,7 +31,7 @@ Part of the team challenges in SI Gathering 2020.
 
 - [Omnia Radix](https://www.radix.equinor.com/)  
   CICD and hosting in the [playground](https://console.playground.radix.equinor.com/applications/gathering-leto) environment.
-  Radix configuration is mainly handled in [`radixconfiguration.yaml`](../radixconfiguration.yaml)
+  Radix configuration is mainly handled in [`radixconfig.yaml`](./radixconfig.yaml)
 
 
 ## Components
