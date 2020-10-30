@@ -57,9 +57,27 @@ def _create_tags_listbox_div(data_listbox):
     )
 
 
+def _create_navbar():
+    return html.Div(
+        children=[
+            html.Nav(
+                className="nav nav-pills",
+                children=[
+                    html.A(
+                        "Leto issues",
+                        className="nav-item nav-link active btn",
+                        href="/",
+                    )
+                ],
+            )
+        ]
+    )
+
+
 app.layout = html.Div(
     [
         _create_logo(),
+        _create_navbar(),
         _create_tags_listbox_div(tags),
         _create_table_view_div(get_data_dict(data_issues)),
     ]
