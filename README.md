@@ -1,4 +1,5 @@
 [![GitHub Actions](https://github.com/equinor/gathering-leto/workflows/python_code_style/badge.svg)](https://github.com/features/actions)
+[![GitHub Actions](https://github.com/equinor/gathering-leto/workflows/unit_tests/badge.svg)](https://github.com/features/actions)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
